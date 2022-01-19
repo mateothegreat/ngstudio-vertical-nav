@@ -13,9 +13,11 @@
             <div *ngIf="group.iconClass"
                  class="icon"
                  [style.font-size]="instance.config.theme.groups.title.icon.fontSize"
+                 [style.color]="instance.config.theme.groups.title.icon.color"
                  [class]="group.iconClass"></div>
 
-            <div class="left">
+            <div [style.color]="instance.config.theme.groups.title.color"
+                 class="left">
 
                 {{ group.title }}
 
@@ -26,24 +28,35 @@
                 <i *ngIf="group.toggleIconClasses"
                    class="icon"
                    [style.font-size]="instance.config.theme.groups.title.toggle.fontSize"
+                   [style.color]="instance.config.theme.groups.title.toggle.color"
                    [class]="group.open ? group.toggleIconClasses?.active : group.toggleIconClasses?.inactive"></i>
 
             </div>
 
         </div>
 
-        <div *ngIf="group.open" class="items">
+        <div *ngIf="group.open"
+             [style.background]="instance.config.theme.groups.items.background"
+             class="items">
 
-            <div *ngFor="let item of group.items"
-                 [style.background]="instance.config.theme.groups.items.background"
+            <div #groupRef
+                 *ngFor="let item of group.items"
+                 [@slideDownUp]="group.open"
                  [style.font-size]="instance.config.theme.groups.items.fontSize"
+                 [style.color]="item.active ? instance.config.theme.groups.items.effects.active.color : instance.config.theme.groups.items.effects.inactive.color"
                  [class.active]="item.active"
+                 [class]="instance.config.theme.groups.items.effects.active.effect"
                  (click)="onItemClick(item, group)"
+                 (mouseover)="groupRef.style.color = instance.config.theme.groups.items.effects.hover.color"
+                 (mouseout)="groupRef.style.color = item.active ? instance.config.theme.groups.items.effects.active.color : instance.config.theme.groups.items.effects.inactive.color"
+                 (mousedown)="groupRef.classList.add(instance.config.theme.groups.items.effects.pressed.effect); groupRef.style.color = instance.config.theme.groups.items.effects.pressed.color"
+                 (mouseup)="groupRef.classList.remove(instance.config.theme.groups.items.effects.pressed.effect); groupRef.style.color = item.active ? instance.config.theme.groups.items.effects.active.color : instance.config.theme.groups.items.effects.inactive.color"
                  class="item">
 
                 <div *ngIf="item.iconClass"
                      class="icon"
                      [style.font-size]="instance.config.theme.groups.items.icon.fontSize"
+                     [style.color]="instance.config.theme.groups.items.icon.color"
                      [class]="item.iconClass"></div>
 
                 <div class="label">
@@ -57,7 +70,6 @@
         </div>
 
     </div>
-
 
 </div>
 

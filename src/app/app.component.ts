@@ -1,5 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { VerticalNavService } from '../../projects/vertical-nav/src/lib/vertical-nav.service';
+import { VerticalNavThemeEffect } from '../../projects/vertical-nav/src/lib/vertical-nav-theme-effect';
 
 @Component({
     selector: 'app-root',
@@ -16,6 +17,66 @@ export class AppComponent implements AfterViewInit {
 
         const instance = this.verticalNavService.create('one', {
 
+            theme: {
+
+                groups: {
+
+                    title: {
+
+                        background: '#333',
+                        color: '#fff',
+                        icon: {
+
+                            color: '#aaa'
+
+                        },
+                        toggle: {
+
+                            color: '#777'
+
+                        }
+
+                    },
+                    items: {
+
+                        background: '#222',
+                        color: '#aaa',
+                        icon: {
+
+                            color: 'yellow'
+
+                        },
+                        effects: {
+
+                            inactive: {
+
+                                color: '#aaa'
+
+                            },
+                            active: {
+
+                                color: 'yellow'
+
+                            },
+                            hover: {
+
+                                color: 'red'
+
+                            },
+                            pressed: {
+
+                                effect: VerticalNavThemeEffect.EXPAND_HORIZONTAL,
+                                color: 'purple'
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            },
             groups: [
 
                 {

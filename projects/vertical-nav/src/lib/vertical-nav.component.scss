@@ -15,12 +15,6 @@
                 padding: 10px;
                 cursor: pointer;
 
-                &:hover {
-
-                    font-weight: bold;
-
-                }
-
                 .icon {
 
                     margin-right: 5px;
@@ -40,6 +34,9 @@
 
             .items {
 
+                padding-top: 10px;
+                padding-bottom: 10px;
+
                 .item {
 
                     display: flex;
@@ -49,11 +46,7 @@
                     font-size: 15px;
                     cursor: pointer;
 
-                    &:hover {
-
-                        font-weight: bold;
-
-                    }
+                    padding-top: 10px;
 
                     .icon {
 
@@ -71,15 +64,39 @@
 
                 }
 
-                .active {
-
-                    font-weight: bold;
-
-                }
-
             }
 
         }
+
+    }
+
+    .effect-expand-horizontal {
+
+        padding-left: 15px !important;
+
+    }
+
+    .effect-slide-up {
+
+        transform: translateY(-4px);
+
+    }
+
+    .effect-slide-down {
+
+        transform: translateY(4px);
+
+    }
+
+    .effect-slide-left {
+
+        transform: translateX(-4px);
+
+    }
+
+    .effect-slide-right {
+
+        transform: translateX(4px);
 
     }
 

@@ -1,7 +1,11 @@
-/*
- * Public API Surface of vertical-nav
- */
-
 export * from './lib/vertical-nav.service';
 export * from './lib/vertical-nav.component';
 export * from './lib/vertical-nav.module';
+export * from './lib/vertical-nav-click-event';
+export * from './lib/vertical-nav-config';
+export * from './lib/vertical-nav-group';
+export * from './lib/vertical-nav-instance';
+export * from './lib/vertical-nav-item';
+export * from './lib/vertical-nav-theme';
+export * from './lib/vertical-nav-theme-effect';
+export * from './lib/vertical-nav-themes';

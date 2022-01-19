@@ -1,0 +1,86 @@
+:host {
+
+    .wrapper {
+
+        //width: 100%;
+
+        .group {
+
+            .title {
+
+                display: flex;
+                align-items: center;
+
+                font-size: 18px;
+                padding: 10px;
+                cursor: pointer;
+
+                &:hover {
+
+                    font-weight: bold;
+
+                }
+
+                .icon {
+
+                    margin-right: 5px;
+                    font-size: 25px;
+                    width: 25px;
+                    text-align: center;
+
+                }
+
+                .left {
+
+                    flex: 1;
+
+                }
+
+            }
+
+            .items {
+
+                .item {
+
+                    display: flex;
+                    align-items: center;
+
+                    padding: 10px;
+                    font-size: 15px;
+                    cursor: pointer;
+
+                    &:hover {
+
+                        font-weight: bold;
+
+                    }
+
+                    .icon {
+
+                        margin-right: 5px;
+                        font-size: 25px;
+                        width: 25px;
+                        text-align: center;
+
+                    }
+
+                    .label {
+
+
+                    }
+
+                }
+
+                .active {
+
+                    font-weight: bold;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

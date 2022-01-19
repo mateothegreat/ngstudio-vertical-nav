@@ -1,0 +1,63 @@
+<div [style.background]="instance.config.theme.background"
+     class="wrapper">
+
+    <div *ngFor="let group of instance.config.groups"
+         [style.background]="instance.config.theme.groups.background"
+         class="group">
+
+        <div [style.background]="instance.config.theme.groups.title.background"
+             [style.font-size]="instance.config.theme.groups.title.fontSize"
+             (click)="toggle(group)"
+             class="title">
+
+            <div *ngIf="group.iconClass"
+                 class="icon"
+                 [style.font-size]="instance.config.theme.groups.title.icon.fontSize"
+                 [class]="group.iconClass"></div>
+
+            <div class="left">
+
+                {{ group.title }}
+
+            </div>
+
+            <div class="right">
+
+                <i *ngIf="group.toggleIconClasses"
+                   class="icon"
+                   [style.font-size]="instance.config.theme.groups.title.toggle.fontSize"
+                   [class]="group.open ? group.toggleIconClasses?.active : group.toggleIconClasses?.inactive"></i>
+
+            </div>
+
+        </div>
+
+        <div *ngIf="group.open" class="items">
+
+            <div *ngFor="let item of group.items"
+                 [style.background]="instance.config.theme.groups.items.background"
+                 [style.font-size]="instance.config.theme.groups.items.fontSize"
+                 [class.active]="item.active"
+                 (click)="onItemClick(item, group)"
+                 class="item">
+
+                <div *ngIf="item.iconClass"
+                     class="icon"
+                     [style.font-size]="instance.config.theme.groups.items.icon.fontSize"
+                     [class]="item.iconClass"></div>
+
+                <div class="label">
+
+                    {{ item.label }}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
